@@ -87,7 +87,11 @@ export default function LaundryServicesPage() {
             <Link href="/#approach">Our approach</Link>
           </nav>
           <div className="header-actions">
-            <a className="button button-small button-green header-call" href="tel:+256700123456"><Phone size={15} /> Call us</a>
+            <details className="header-call-popover">
+              <summary className="button button-small button-green"><Phone size={15} /> Call us</summary>
+              <div className="header-call-panel"><span>Call FreshSpace</span><a href="tel:+256700123456">+256 700 123 456</a></div>
+            </details>
+            <a className="button button-small button-green header-call-mobile" href="tel:+256700123456"><Phone size={15} /> Call us</a>
           </div>
         </div>
       </header>

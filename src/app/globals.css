@@ -44,6 +44,14 @@ button, input, select { font: inherit; }
 .desktop-nav a { color: #435864; font-size: 12px; font-weight: 600; transition: color .2s ease; }
 .desktop-nav a:hover { color: var(--green-dark); }
 .header-actions { gap: 22px; }
+.header-call-popover { position: relative; }
+.header-call-popover summary { list-style: none; cursor: pointer; }
+.header-call-popover summary::-webkit-details-marker { display: none; }
+.header-call-panel { position: absolute; z-index: 20; top: calc(100% + 10px); right: 0; min-width: 210px; display: none; gap: 6px; padding: 14px 16px; border: 1px solid #e3ece9; background: #fff; box-shadow: 0 12px 28px rgba(16,43,62,.15); }
+.header-call-popover[open] .header-call-panel { display: grid; }
+.header-call-panel span { color: #72818a; font-size: 10px; }
+.header-call-panel a { color: var(--green-dark); font-size: 15px; font-weight: 750; white-space: nowrap; }
+.header-call-mobile { display: none; }
 .button { min-height: 48px; display: inline-flex; justify-content: center; align-items: center; gap: 11px; padding: 0 21px; border: 0; border-radius: 7px; font-size: 12px; font-weight: 700; transition: background .18s ease, transform .18s ease, box-shadow .18s ease; }
 .button:hover { transform: translateY(-2px); }
 .button-green { color: #fff; background: var(--green); box-shadow: 0 8px 18px rgba(12,169,135,.17); }
@@ -213,8 +221,9 @@ button, input, select { font: inherit; }
 @media (max-width: 680px) {
   html { scroll-padding-top: 68px; }
   .container { width: calc(100% - 36px); }
-  .strip-inner { min-height: 31px; justify-content: center; }
-  .strip-note, .strip-inner > a { display: none; }
+  .strip-inner { min-height: 34px; justify-content: space-between; gap: 8px; font-size: 9px; }
+  .strip-note { display: none; }
+  .strip-inner > span:first-child, .strip-inner > a { white-space: nowrap; }
   .site-header { position: sticky; }
   .header-inner { min-height: 67px; gap: 10px; }
   .brand-mark { width: 34px; height: 34px; }
@@ -222,6 +231,8 @@ button, input, select { font: inherit; }
   .desktop-nav { display: none; }
   .header-actions { margin-left: auto; }
   .header-actions .button { min-height: 36px; padding-inline: 12px; font-size: 10px; }
+  .header-call-popover { display: none; }
+  .header-call-mobile { display: inline-flex; }
   .mobile-nav { display: block; order: 3; }
   .mobile-nav summary { width: 35px; height: 35px; display: grid; align-content: center; justify-items: center; gap: 5px; list-style: none; border: 1px solid #e0e9e7; border-radius: 5px; cursor: pointer; }
   .mobile-nav summary::-webkit-details-marker { display: none; }
