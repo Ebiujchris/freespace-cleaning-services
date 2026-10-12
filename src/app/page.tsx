@@ -115,8 +115,7 @@ export default function Home() {
             <a href="#quote">Service areas</a>
           </nav>
           <div className="header-actions">
-            <a className="header-phone" href="tel:+256700123456"><Phone size={15} /> Call us</a>
-            <a className="button button-small button-green" href="#quote">Get a quote <ArrowRight size={15} /></a>
+            <a className="button button-small button-green header-call" href="tel:+256700123456"><Phone size={15} /> Call us</a>
           </div>
           <details className="mobile-nav">
             <summary aria-label="Open navigation"><span></span><span></span></summary>

@@ -41,11 +41,9 @@ button, input, select { font: inherit; }
 .brand-copy small { color: #72838c; font-size: 8px; line-height: 1.4; letter-spacing: .16em; font-weight: 700; }
 .desktop-nav, .header-actions { display: flex; align-items: center; }
 .desktop-nav { gap: 32px; margin-left: auto; }
-.desktop-nav a, .header-phone { color: #435864; font-size: 12px; font-weight: 600; transition: color .2s ease; }
-.desktop-nav a:hover, .header-phone:hover { color: var(--green-dark); }
+.desktop-nav a { color: #435864; font-size: 12px; font-weight: 600; transition: color .2s ease; }
+.desktop-nav a:hover { color: var(--green-dark); }
 .header-actions { gap: 22px; }
-.header-phone { display: inline-flex; align-items: center; gap: 7px; }
-.header-phone svg { color: var(--blue); }
 .button { min-height: 48px; display: inline-flex; justify-content: center; align-items: center; gap: 11px; padding: 0 21px; border: 0; border-radius: 7px; font-size: 12px; font-weight: 700; transition: background .18s ease, transform .18s ease, box-shadow .18s ease; }
 .button:hover { transform: translateY(-2px); }
 .button-green { color: #fff; background: var(--green); box-shadow: 0 8px 18px rgba(12,169,135,.17); }
@@ -221,7 +219,7 @@ button, input, select { font: inherit; }
   .header-inner { min-height: 67px; gap: 10px; }
   .brand-mark { width: 34px; height: 34px; }
   .brand-copy strong { font-size: 17px; }
-  .desktop-nav, .header-phone { display: none; }
+  .desktop-nav { display: none; }
   .header-actions { margin-left: auto; }
   .header-actions .button { min-height: 36px; padding-inline: 12px; font-size: 10px; }
   .mobile-nav { display: block; order: 3; }

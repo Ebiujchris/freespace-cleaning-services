@@ -87,8 +87,7 @@ export default function LaundryServicesPage() {
             <Link href="/#approach">Our approach</Link>
           </nav>
           <div className="header-actions">
-            <a className="header-phone" href="tel:+256700123456"><Phone size={15} /> Call us</a>
-            <a className="button button-small button-green" href="#laundry-quote">Get an estimate <ArrowRight size={15} /></a>
+            <a className="button button-small button-green header-call" href="tel:+256700123456"><Phone size={15} /> Call us</a>
           </div>
         </div>
       </header>
