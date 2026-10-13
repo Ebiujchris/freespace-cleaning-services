@@ -125,7 +125,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         <div className="container footer-main">
           <div className="footer-brand-col"><Link className="brand brand-footer" href="/"><span className="brand-mark"><Leaf size={21} strokeWidth={2.3} /></span><span className="brand-copy"><strong>FreshSpace</strong><small>LAUNDRY &amp; CLEANING SERVICES</small></span></Link><p>{business.name} in Kampala and Wakiso.</p><span className="footer-location"><MapPin size={14} />{business.serviceArea}</span></div>
           <div className="footer-links"><h2>Explore</h2><Link href="/#services">All services</Link><Link href="/#pricing">Pricing</Link><Link href="/laundry-services-kampala">Laundry &amp; ironing</Link></div>
-          <div className="footer-links"><h2>Get in touch</h2><a href={business.phoneHref}>{business.phoneNumber}</a><a href={`mailto:${business.email}`}>{business.email}</a><span>{business.hours}</span></div>
+          <div className="footer-links"><h2>Get in touch</h2><a href={business.phoneHref}>{business.phoneNumber}</a><a href={business.phoneHref2}>{business.phoneNumber2}</a><a href={`mailto:${business.email}`}>{business.email}</a><span>{business.hours}</span></div>
         </div>
         <div className="container footer-bottom"><span>© 2026 {business.name}</span><span>Clean spaces. A little more breathing room.</span></div>
       </footer>

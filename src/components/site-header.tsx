@@ -37,7 +37,11 @@ export default function SiteHeader({ pricingHref = "/#pricing" }: { pricingHref?
           <div className="header-actions">
             <details className="header-call-popover">
               <summary className="button button-small button-green"><Phone size={15} /> Call us</summary>
-              <div className="header-call-panel"><span>Call FreshSpace</span><a href={business.phoneHref}>{business.phoneNumber}</a></div>
+              <div className="header-call-panel">
+                <span>Call FreshSpace</span>
+                <a href={business.phoneHref}>{business.phoneNumber}</a>
+                <a href={business.phoneHref2}>{business.phoneNumber2}</a>
+              </div>
             </details>
           </div>
           <details className="mobile-nav">

@@ -147,7 +147,7 @@ export default function LaundryServicesPage() {
               <p className="eyebrow eyebrow-light"><span className="eyebrow-line"></span> Laundry service in Kampala</p>
               <h2>Let’s lighten<br /><span>laundry day.</span></h2>
               <p>Tell us what needs washing or ironing and where you are. We’ll confirm the service details and price with you before booking.</p>
-              <div className="quote-contact"><span className="contact-icon"><Phone size={17} /></span><span><small>Prefer to talk?</small><a href={business.phoneHref}>{business.phoneNumber}</a></span></div>
+              <div className="quote-contact"><span className="contact-icon"><Phone size={17} /></span><span><small>Prefer to talk?</small><a href={business.phoneHref}>{business.phoneNumber}</a><a href={business.phoneHref2}>{business.phoneNumber2}</a></span></div>
               <div className="coverage-note"><MapPin size={16} /><span>Currently welcoming requests in Kampala and Wakiso.</span></div>
             </div>
             <QuoteForm initialService="laundry" />
@@ -170,7 +170,7 @@ export default function LaundryServicesPage() {
         <div className="container footer-main">
           <div className="footer-brand-col"><Link className="brand brand-footer" href="/"><span className="brand-mark"><Leaf size={21} strokeWidth={2.3} /></span><span className="brand-copy"><strong>FreshSpace</strong><small>LAUNDRY &amp; CLEANING SERVICES</small></span></Link><p>FreshSpace Laundry &amp; Cleaning Services for Kampala and Wakiso.</p><span className="footer-location"><MapPin size={14} /> {business.serviceArea}</span></div>
           <div className="footer-links"><h2>Explore</h2><Link href="/">Home</Link><Link href="/#services">All services</Link><a href="#laundry-quote">Get a laundry estimate</a></div>
-          <div className="footer-links"><h2>Get in touch</h2><a href={business.phoneHref}>{business.phoneNumber}</a><a href={`mailto:${business.email}`}>{business.email}</a><span>{business.hours}</span></div>
+          <div className="footer-links"><h2>Get in touch</h2><a href={business.phoneHref}>{business.phoneNumber}</a><a href={business.phoneHref2}>{business.phoneNumber2}</a><a href={`mailto:${business.email}`}>{business.email}</a><span>{business.hours}</span></div>
         </div>
         <div className="container footer-bottom"><span>© 2026 FreshSpace Laundry &amp; Cleaning Services</span><span>Clean spaces. A little more breathing room.</span></div>
       </footer>

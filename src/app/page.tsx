@@ -194,7 +194,7 @@ export default function Home() {
               <p className="eyebrow eyebrow-light"><span className="eyebrow-line"></span> Your space, your way</p>
               <h2>Let’s make<br />room for <span>better.</span></h2>
               <p>Tell us a little about your clean. We’ll review the details with you and confirm the price before scheduling.</p>
-              <div className="quote-contact"><span className="contact-icon"><Phone size={17} /></span><span><small>Prefer to talk?</small><a href={business.phoneHref}>{business.phoneNumber}</a></span></div>
+              <div className="quote-contact"><span className="contact-icon"><Phone size={17} /></span><span><small>Prefer to talk?</small><a href={business.phoneHref}>{business.phoneNumber}</a><a href={business.phoneHref2}>{business.phoneNumber2}</a></span></div>
               <div className="coverage-note"><MapPin size={16} /><span>Currently welcoming requests in Kampala and Wakiso.</span></div>
             </div>
             <QuoteForm />
@@ -207,7 +207,7 @@ export default function Home() {
         <div className="container footer-main">
           <div className="footer-brand-col"><a className="brand brand-footer" href="#top"><span className="brand-mark"><Leaf size={21} strokeWidth={2.3} /></span><span className="brand-copy"><strong>FreshSpace</strong><small>LAUNDRY &amp; CLEANING SERVICES</small></span></a><p>Laundry and thoughtful cleaning for the spaces that make your day.</p><span className="footer-location"><MapPin size={14} /> {business.serviceArea}</span></div>
           <div className="footer-links"><h2>Explore</h2><a href="#services">Our services</a><a href="#approach">Our approach</a><a href="#quote">Get an estimate</a></div>
-          <div className="footer-links"><h2>Get in touch</h2><a href={business.phoneHref}>{business.phoneNumber}</a><a href={`mailto:${business.email}`}>{business.email}</a><span>{business.hours}</span></div>
+          <div className="footer-links"><h2>Get in touch</h2><a href={business.phoneHref}>{business.phoneNumber}</a><a href={business.phoneHref2}>{business.phoneNumber2}</a><a href={`mailto:${business.email}`}>{business.email}</a><span>{business.hours}</span></div>
         </div>
         <div className="container footer-bottom"><span>© 2026 FreshSpace Laundry &amp; Cleaning Services</span><span>Clean spaces. A little more breathing room.</span></div>
       </footer>
