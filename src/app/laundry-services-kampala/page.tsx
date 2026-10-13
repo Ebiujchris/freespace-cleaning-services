@@ -11,6 +11,8 @@ import {
   Sparkles,
 } from "lucide-react";
 import QuoteForm from "@/components/quote-form";
+import { business } from "@/lib/business";
+import SiteHeader from "@/components/site-header";
 
 export const metadata: Metadata = {
   title: "Laundry Services Kampala | FreshSpace Laundry & Cleaning",
@@ -31,7 +33,7 @@ const structuredData = {
   serviceType: "Laundry cleaning and ironing",
   provider: {
     "@type": "Organization",
-    name: "FreshSpace Laundry & Cleaning Services",
+    name: business.name,
   },
   areaServed: [
     { "@type": "City", name: "Kampala" },
@@ -67,33 +69,7 @@ export default function LaundryServicesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <div className="service-strip">
-        <div className="container strip-inner">
-          <span><MapPin size={13} /> Kampala &amp; Wakiso, Uganda</span>
-          <span className="strip-note">Laundry and ironing, made easier.</span>
-          <a href="tel:+256700123456"><Phone size={13} /> +256 700 123 456</a>
-        </div>
-      </div>
-
-      <header className="site-header">
-        <div className="container header-inner">
-          <Link className="brand" href="/" aria-label="FreshSpace home">
-            <span className="brand-mark"><Leaf size={21} strokeWidth={2.3} /></span>
-            <span className="brand-copy"><strong>FreshSpace</strong><small>LAUNDRY &amp; CLEANING SERVICES</small></span>
-          </Link>
-          <nav className="desktop-nav" aria-label="Main navigation">
-            <Link href="/#services">Services</Link>
-            <Link href="/laundry-services-kampala">Laundry</Link>
-            <Link href="/#approach">Our approach</Link>
-          </nav>
-          <div className="header-actions">
-            <details className="header-call-popover">
-              <summary className="button button-small button-green"><Phone size={15} /> Call us</summary>
-              <div className="header-call-panel"><span>Call FreshSpace</span><a href="tel:+256700123456">+256 700 123 456</a></div>
-            </details>
-          </div>
-        </div>
-      </header>
+      <SiteHeader pricingHref="#pricing" />
 
       <main>
         <section className="hero-section">
@@ -154,7 +130,13 @@ export default function LaundryServicesPage() {
               <li><Check size={16} /> Get an estimate before confirming</li>
               <li><Check size={16} /> Speak directly with our team on WhatsApp</li>
             </ul>
-            <a className="button button-light" href="#laundry-quote">Get a laundry estimate <ArrowRight size={16} /></a>
+          </div>
+        </section>
+
+        <section className="pricing-section section-pad" id="pricing">
+          <div className="container pricing-inner">
+            <div><p className="eyebrow"><span className="eyebrow-line"></span> Laundry service pricing</p><h2>A clear price<br /><span>before booking.</span></h2></div>
+            <div className="pricing-copy"><p>Laundry and ironing prices depend on the size of the load and the service requested. Send us the details and we’ll confirm your price before anything is booked.</p><a className="text-link" href="#laundry-quote">Ask about laundry pricing <ArrowRight size={16} /></a></div>
           </div>
         </section>
 
@@ -164,8 +146,8 @@ export default function LaundryServicesPage() {
             <div className="quote-copy">
               <p className="eyebrow eyebrow-light"><span className="eyebrow-line"></span> Laundry service in Kampala</p>
               <h2>Let’s lighten<br /><span>laundry day.</span></h2>
-              <p>Tell us what needs washing or ironing and where you are. We will prepare a starting estimate and confirm the service details with you.</p>
-              <div className="quote-contact"><span className="contact-icon"><Phone size={17} /></span><span><small>Prefer to talk?</small><a href="tel:+256700123456">+256 700 123 456</a></span></div>
+              <p>Tell us what needs washing or ironing and where you are. We’ll confirm the service details and price with you before booking.</p>
+              <div className="quote-contact"><span className="contact-icon"><Phone size={17} /></span><span><small>Prefer to talk?</small><a href={business.phoneHref}>{business.phoneNumber}</a></span></div>
               <div className="coverage-note"><MapPin size={16} /><span>Currently welcoming requests in Kampala and Wakiso.</span></div>
             </div>
             <QuoteForm initialService="laundry" />
@@ -186,10 +168,9 @@ export default function LaundryServicesPage() {
 
       <footer className="site-footer">
         <div className="container footer-main">
-          <div className="footer-brand-col"><Link className="brand brand-footer" href="/"><span className="brand-mark"><Leaf size={21} strokeWidth={2.3} /></span><span className="brand-copy"><strong>FreshSpace</strong><small>LAUNDRY &amp; CLEANING SERVICES</small></span></Link><p>FreshSpace Laundry &amp; Cleaning Services for Kampala and Wakiso.</p><span className="footer-location"><MapPin size={14} /> Kampala &amp; Wakiso, Uganda</span></div>
+          <div className="footer-brand-col"><Link className="brand brand-footer" href="/"><span className="brand-mark"><Leaf size={21} strokeWidth={2.3} /></span><span className="brand-copy"><strong>FreshSpace</strong><small>LAUNDRY &amp; CLEANING SERVICES</small></span></Link><p>FreshSpace Laundry &amp; Cleaning Services for Kampala and Wakiso.</p><span className="footer-location"><MapPin size={14} /> {business.serviceArea}</span></div>
           <div className="footer-links"><h2>Explore</h2><Link href="/">Home</Link><Link href="/#services">All services</Link><a href="#laundry-quote">Get a laundry estimate</a></div>
-          <div className="footer-links"><h2>Get in touch</h2><a href="tel:+256700123456">+256 700 123 456</a><a href="mailto:hello@freshspace.ug">hello@freshspace.ug</a><span>Monday – Saturday<br />8:00 am – 6:00 pm</span></div>
-          <a className="footer-cta" href="#laundry-quote"><span>Ready for laundry day?</span><strong>Let’s talk <ArrowRight size={17} /></strong></a>
+          <div className="footer-links"><h2>Get in touch</h2><a href={business.phoneHref}>{business.phoneNumber}</a><a href={`mailto:${business.email}`}>{business.email}</a><span>{business.hours}</span></div>
         </div>
         <div className="container footer-bottom"><span>© 2026 FreshSpace Laundry &amp; Cleaning Services</span><span>Clean spaces. A little more breathing room.</span></div>
       </footer>
