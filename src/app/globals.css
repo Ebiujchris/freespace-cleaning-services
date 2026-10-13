@@ -347,3 +347,21 @@ button, input, select { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+.carousel-section { background: #fff; padding-block: 50px; }
+.carousel-container { position: relative; }
+.carousel-track { display: flex; overflow-x: auto; gap: 16px; scroll-behavior: smooth; padding-bottom: 12px; }
+.carousel-track::-webkit-scrollbar { height: 6px; }
+.carousel-track::-webkit-scrollbar-track { background: #e7eeed; border-radius: 3px; }
+.carousel-track::-webkit-scrollbar-thumb { background: var(--green); border-radius: 3px; }
+.carousel-item { flex: 0 0 320px; height: 230px; border-radius: 8px; overflow: hidden; background: #dfe9e7; }
+.carousel-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.carousel-controls { display: flex; gap: 8px; justify-content: center; margin-top: 16px; }
+.carousel-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(12,169,135,.3); cursor: pointer; transition: background .3s ease; border: none; padding: 0; }
+.carousel-dot.active { background: var(--green); }
+
+@media (max-width: 680px) {
+  .carousel-section { padding-block: 40px; }
+  .carousel-track { gap: 12px; }
+  .carousel-item { flex: 0 0 240px; height: 170px; }
+}

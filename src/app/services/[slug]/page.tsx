@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { use } from "react";
 import { ArrowRight, BadgeCheck, Leaf, MapPin, Phone, ShieldCheck } from "lucide-react";
 import QuoteForm from "@/components/quote-form";
+import ImageCarousel from "@/components/image-carousel";
 import SiteHeader from "@/components/site-header";
 import { business } from "@/lib/business";
 import { servicePages } from "@/lib/services";
@@ -33,8 +33,8 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   };
 }
 
-export default function ServiceDetailPage({ params }: ServicePageProps) {
-  const { slug } = use(params);
+export default async function ServiceDetailPage({ params }: ServicePageProps) {
+  const { slug } = await params;
   const service = servicePages.find((item) => item.slug === slug);
 
   if (!service) notFound();
@@ -98,6 +98,21 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
             </div>
           </div>
         </section>
+
+        {service.slug === "roof-exterior-cleaning" && (
+          <section className="carousel-section">
+            <div className="container">
+              <ImageCarousel
+                images={[
+                  { src: "/images/roof cleaning.jpg", alt: "Professional roof cleaning" },
+                  { src: "/images/a nother roof cleaning image.jpg", alt: "Roof maintenance work" },
+                  { src: "/images/exteriror cleaning image.jfif", alt: "Exterior cleaning service" },
+                  { src: "/images/more exterior cleaning image.jfif", alt: "Professional exterior work" },
+                ]}
+              />
+            </div>
+          </section>
+        )}
 
         <section className="pricing-section section-pad" id="pricing">
           <div className="container pricing-inner">
