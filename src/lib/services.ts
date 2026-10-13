@@ -81,7 +81,7 @@ export const servicePages = [
       "Confirm site requirements and scope with the team before booking.",
     ],
     image:
-      "https://images.unsplash.com/photo-1635424710928-3d5f8f7f3c9d?auto=format&fit=crop&w=1500&q=90",
+      "/images/roof-cleaning.png",
     imageAlt: "Exterior roof maintenance at a residential property",
   },
 ] as const;
