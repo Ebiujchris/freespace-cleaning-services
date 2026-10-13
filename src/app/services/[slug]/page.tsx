@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { use } from "react";
 import { ArrowRight, BadgeCheck, Leaf, MapPin, Phone, ShieldCheck } from "lucide-react";
 import QuoteForm from "@/components/quote-form";
 import SiteHeader from "@/components/site-header";
@@ -32,8 +33,8 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   };
 }
 
-export default async function ServiceDetailPage({ params }: ServicePageProps) {
-  const { slug } = await params;
+export default function ServiceDetailPage({ params }: ServicePageProps) {
+  const { slug } = use(params);
   const service = servicePages.find((item) => item.slug === slug);
 
   if (!service) notFound();
