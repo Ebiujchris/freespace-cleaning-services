@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, BadgeCheck, Leaf, MapPin, Phone, ShieldCheck } from "lucide-react";
-import QuoteForm from "@/components/quote-form";
+import { ArrowRight, BadgeCheck, Leaf, MapPin, ShieldCheck } from "lucide-react";
 import ImageCarousel from "@/components/image-carousel";
 import SiteHeader from "@/components/site-header";
 import { business } from "@/lib/business";
@@ -72,7 +71,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               <h1>{service.name} in <span>Kampala.</span></h1>
               <p className="hero-description">{service.introduction}</p>
               <div className="hero-actions">
-                <a className="button button-green" href="#service-enquiry">Ask about this service <ArrowRight size={17} /></a>
+                <Link className="button button-green" href="/#quote">Get an estimate <ArrowRight size={17} /></Link>
                 <Link className="text-link" href="/#services">All services <ArrowRight size={16} /></Link>
               </div>
               <div className="hero-note"><span className="note-icon"><BadgeCheck size={19} /></span><span><strong>Serving Kampala &amp; Wakiso</strong><small>We confirm scope, availability, and price before booking.</small></span></div>
@@ -117,21 +116,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         <section className="pricing-section section-pad" id="pricing">
           <div className="container pricing-inner">
             <div><p className="eyebrow"><span className="eyebrow-line"></span> Straightforward pricing</p><h2>Know the price<br /><span>before booking.</span></h2></div>
-            <div className="pricing-copy"><p>Pricing depends on the service details, space, and location. Tell us what you need and we’ll confirm the scope and price with you before scheduling.</p><a className="text-link" href="#service-enquiry">Ask about pricing <ArrowRight size={16} /></a></div>
-          </div>
-        </section>
-
-        <section className="quote-section" id="service-enquiry">
-          <div className="quote-decor decor-one"></div><div className="quote-decor decor-two"></div>
-          <div className="container quote-layout">
-            <div className="quote-copy">
-              <p className="eyebrow eyebrow-light"><span className="eyebrow-line"></span> Ask about {service.name.toLowerCase()}</p>
-              <h2>Let’s discuss<br /><span>your space.</span></h2>
-              <p>Send a few details and the FreshSpace team will follow up to discuss availability and pricing.</p>
-              <div className="quote-contact"><span className="contact-icon"><Phone size={17} /></span><span><small>Prefer to talk?</small><a href={business.phoneHref}>{business.phoneNumber}</a></span></div>
-              <div className="coverage-note"><MapPin size={16} /><span>{business.serviceArea}</span></div>
-            </div>
-            <QuoteForm initialService={service.formService} />
+            <div className="pricing-copy"><p>Pricing depends on the service details, space, and location. Tell us what you need and we'll confirm the scope and price with you before scheduling.</p><Link className="text-link" href="/#quote">Get an estimate <ArrowRight size={16} /></Link></div>
           </div>
         </section>
       </main>
