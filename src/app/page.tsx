@@ -70,7 +70,7 @@ const services = [
     name: "Roof & exterior",
     detail: "Exterior and gutter care for a well-kept property all around.",
     image:
-      "https://images.unsplash.com/photo-1635424710928-3d5f8f7f3c9d?auto=format&fit=crop&w=1100&q=85",
+      "/images/roof cleaning.jpg",
     imageAlt: "A professional carrying out exterior property maintenance",
     icon: House,
   },
